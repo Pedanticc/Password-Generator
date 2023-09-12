@@ -1,0 +1,103 @@
+@font-face {
+  src: url(../Fonts/RobotoMono-Light.ttf);
+  font-family: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  background-color: #0f151b;
+  font-family: light;
+  height: 100vh;
+  min-height: 260px;
+  min-width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  width: 450px;
+  height: 200px;
+  border: 1px crimson solid;
+  background-color: #0b0f13;
+}
+
+.first-section {
+  /* border: 1px gold solid; */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.options {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px gold solid;
+  color: white;
+  filter: drop-shadow(0 0 0.1rem rgb(20, 220, 97));
+  background-color: rgba(255, 196, 0, 0.1);
+  border: 1px rgb(255, 217, 0, 0.4) solid;
+  transition: 500ms;
+}
+
+.options:hover {
+  cursor: pointer;
+  background-color: rgba(255, 196, 0, 0.5);
+  border: 1px rgb(255, 217, 0, 0.8) solid;
+}
+
+.last-section {
+  /* border: 1px purple solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 148px;
+  margin-top: 15px;
+}
+
+.out-put-container {
+  width: 90%;
+  background-color: black;
+  border: rgb(31, 31, 31) 1px solid;
+  height: 35px;
+  color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.btns {
+  width: 150px;
+  height: 35px;
+  background-color: #0b5345;
+  color: #b3b6b7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.btns:hover {
+  background-color: #06382e;
+}
