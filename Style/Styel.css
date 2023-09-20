@@ -17,6 +17,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../Img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    background-position: 50% 50%;
 }
 
 .main-container{
@@ -75,6 +80,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 999;
 }
 
 .buttons-container{
@@ -107,7 +113,9 @@ body{
     }
 
     50%{
-        border: 1px rgba(140, 0, 255, 0.4) solid;
+        border: 1px rgba(255, 255, 255, 0.4) solid;
+        filter: drop-shadow(0 0 0.10rem rgb(220, 20, 20));
+        background-color: rgba(173, 0, 0, 0.1);
     }
 
     100%{

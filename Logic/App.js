@@ -2,7 +2,7 @@ let break_animation = false
 let loading_animation_chars = [".", "|", "/", "-"]
 let all_selected_options = [8, 12, 18]
 let selected_option = 0
-let special_characters = "!#$%&@_-=#+$&*()/"
+let special_characters = "!#$%&@_-#$&/"
 let numbers = "1234567890"
 let letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 let generated_password = ""
@@ -18,8 +18,15 @@ async function animation(){
                 await sleep(100);
                 let selected_char = loading_animation_chars[i]
                 out_put_result.innerHTML = selected_char
+                if (break_animation == true){
+                    out_put_result.innerHTML = generated_password
+                }
             }
         }
+    }
+
+    if(break_animation == true) {
+        out_put_result.innerHTML = generated_password
     }
 }
 
@@ -60,7 +67,7 @@ generate_button.addEventListener('click', async(event) => {
 });
 
 
-function generate_password(x) {
+async function generate_password(x) {
     let char = ""
     generated_password = ""
     for (let i = 0; i <= x; i++){
@@ -79,8 +86,11 @@ function generate_password(x) {
                 generated_password += char
                 break
         }
+        await sleep(30);
+        out_put_result.innerText = generated_password
     }
     out_put_result.innerText = " "
     out_put_result.innerText = generated_password
 }
 
+animation()
