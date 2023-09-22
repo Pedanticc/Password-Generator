@@ -2,10 +2,11 @@ let break_animation = false
 let loading_animation_chars = [".", "|", "/", "-"]
 let all_selected_options = [8, 12, 18]
 let selected_option = 0
-let special_characters = "!#$%&@_-#$&/"
+let special_characters = "!#$%@_-&"
 let numbers = "1234567890"
 let letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 let generated_password = ""
+let disable_options = false
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function animation(){
@@ -29,6 +30,11 @@ async function animation(){
         out_put_result.innerHTML = generated_password
     }
 }
+
+copy_password.addEventListener('click', (event) => {
+    console.log("adwd")
+    copy_me()
+});
 
 option_1.addEventListener('click', (event) => {
     reset_selected()
@@ -54,15 +60,21 @@ function reset_selected() {
 }
 
 generate_button.addEventListener('click', async(event) => {
-    if (!(selected_option in all_selected_options)) {
-        break_animation = true
-        generate_password(selected_option)
-    }
-
-    else{
-        for (let i of all_options){
-            i.style.animation = "blink 1s infinite"
+    if (disable_options == false){
+        if (!(selected_option in all_selected_options)) {
+            break_animation = true
+            disable_options = true
+            generate_password(selected_option)
         }
+
+        else{
+            for (let i of all_options){
+                i.style.animation = "blink 1s infinite"
+            }
+        }
+    }
+    else {
+
     }
 });
 
@@ -91,6 +103,11 @@ async function generate_password(x) {
     }
     out_put_result.innerText = " "
     out_put_result.innerText = generated_password
+    disable_options = false
+}
+
+function copy_me() {
+    let raw_pass = out_put_result.innerText
 }
 
 animation()
